@@ -8,19 +8,19 @@ var transportFile = require('./transports/file');
 var transportIpc = require('./transports/ipc');
 var transportRemote = require('./transports/remote');
 
-module.exports = create('default');
+module.exports = {}//create('default');
 module.exports.default = module.exports;
 
 function create(logId) {
   var instance = {
-    catchErrors: function callCatchErrors(options) {
-      var opts = Object.assign({}, {
-        log: instance.error,
-        showDialog: process.type === 'browser',
-      }, options || {});
+    // catchErrors: function callCatchErrors(options) {
+    //   var opts = Object.assign({}, {
+    //     log: instance.error,
+    //     showDialog: process.type === 'browser',
+    //   }, options || {});
 
-      catchErrors(opts);
-    },
+    //   catchErrors(opts);
+    // },
     create: create,
     functions: {},
     hooks: [],

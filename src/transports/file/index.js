@@ -1,16 +1,16 @@
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
-var util = require('util');
+// var fs = require('fs');
+// var path = require('path');
+// var util = require('util');
 var transform = require('../../transform');
-var FileRegistry = require('./file').FileRegistry;
+// var FileRegistry = require('./file').FileRegistry;
 var variables = require('./variables');
 
 module.exports = fileTransportFactory;
 
 // Shared between multiple file transport instances
-var globalRegistry = new FileRegistry();
+var globalRegistry = null;// new FileRegistry();
 
 function fileTransportFactory(electronLog, customRegistry) {
   var pathVariables = variables.getPathVariables(process.platform);

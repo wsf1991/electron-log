@@ -1,13 +1,14 @@
 'use strict';
 
-var EventEmitter = require('events');
-var fs = require('fs');
-var os = require('os');
-var path = require('path');
-var util = require('util');
+// var EventEmitter = require('events');
+// var fs = require('fs');
+// var os = require('os');
+// var path = require('path');
+// var util = require('util');
 
 var nodeVersion = Number(
-  process.version.match(/^v(\d+\.\d+)/)[1].replace(/\.(\d)$/, '.0$1')
+  0
+  // process.version.match(/^v(\d+\.\d+)/)[1].replace(/\.(\d)$/, '.0$1')
 );
 
 module.exports = {
@@ -75,7 +76,7 @@ function File(filePath, writeOptions, writeAsync) {
   });
 }
 
-util.inherits(File, EventEmitter);
+// util.inherits(File, EventEmitter);
 
 File.prototype.clear = function () {
   try {
@@ -216,7 +217,7 @@ function NullFile(filePath) {
   File.call(this, filePath);
 }
 
-util.inherits(NullFile, File);
+// util.inherits(NullFile, File);
 
 NullFile.prototype.clear = function () {};
 NullFile.prototype.crop = function () {};
@@ -237,7 +238,7 @@ function FileRegistry() {
   this.emitError = this.emitError.bind(this);
 }
 
-util.inherits(FileRegistry, EventEmitter);
+// util.inherits(FileRegistry, EventEmitter);
 
 /**
  * Provide a File object corresponding to the filePath

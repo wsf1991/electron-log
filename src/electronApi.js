@@ -7,7 +7,7 @@
 var electron;
 try {
   // eslint-disable-next-line global-require
-  electron = require('electron');
+  electron = null;// require('electron');
 } catch (e) {
   electron = null;
 }

@@ -2,8 +2,8 @@
 
 /* eslint-disable consistent-return */
 
-var fs = require('fs');
-var path = require('path');
+// var fs = require('fs');
+// var path = require('path');
 
 module.exports = {
   readPackageJson: readPackageJson,
@@ -14,10 +14,11 @@ module.exports = {
  * @return {{ name?: string, version?: string}}
  */
 function readPackageJson() {
-  return tryReadJsonAt(require.main && require.main.filename)
-    || tryReadJsonAt(process.resourcesPath, 'app.asar')
-    || tryReadJsonAt(process.cwd())
-    || { name: null, version: null };
+  return null;
+  // tryReadJsonAt(require.main && require.main.filename)
+  //   || tryReadJsonAt(process.resourcesPath, 'app.asar')
+  //   || tryReadJsonAt(process.cwd())
+  //   || { name: null, version: null };
 }
 
 /**
