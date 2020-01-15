@@ -5,7 +5,6 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint '**/*.js' --ignore-pattern '**/dist/*.js' && tsc --noEmit",
-    "test": "humile 'src/**/*spec.js'",
     "test:full": "npm run test && npm run lint && npm run test:projects",
     "test:projects": "humile 'test-projects/**/*.spec.js' -R list",
     "postversion": "git push && git push --tags",
